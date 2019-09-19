@@ -14,7 +14,7 @@ fi
 
 for filename in ./upload/*; do
 
-    if [ ${filename:2:4} == "min-" ]
+    if [ ${filename:9:4} == "min-" ]
       then
         continue
     fi
@@ -41,10 +41,10 @@ for filename in ./upload/*; do
     categories=(people compositions food landscapes other)
 
     echo "Moving main file and minified file to the designated folder..."
-    mv "$filename" ../pics/${categories[ans]}
-    mv "${filename:0:2}min-${filename:2}" ../pics/${categories[ans]}
+    mv "$filename" pics/${categories[ans]}
+    mv "${filename:0:9}min-${filename:9}" pics/${categories[ans]}
     echo "Adding filename to order.csv..."
-    echo "${filename:2}" >> ../pics/${categories[ans]}/order.csv
+    echo "${filename:9}" >> pics/${categories[ans]}/order.csv
     echo "Done! ( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)"
     printf '\n'
     ans=-1;
