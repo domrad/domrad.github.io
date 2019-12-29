@@ -7,3 +7,4 @@ git add .
 git commit -m "New Update Name!"
 git push
 3. Wait for the website to update & enjoy!
+git
